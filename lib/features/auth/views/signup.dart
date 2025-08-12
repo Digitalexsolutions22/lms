@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:lms/constants/colors.dart';
-import 'package:lms/features/auth/views/signup.dart';
 
-class Loginscreen extends StatelessWidget {
-  const Loginscreen({super.key});
+class Signscreen extends StatelessWidget {
+  const Signscreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -11,20 +10,31 @@ class Loginscreen extends StatelessWidget {
       backgroundColor: AppColors.white,
       body: SafeArea(
         child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
+          padding: const EdgeInsets.symmetric(horizontal: 20),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
+              SizedBox(height: 60),
               Text(
-                "Lets Sign you in",
+                "Register Your \nAccount",
                 style: TextStyle(fontSize: 24, fontWeight: FontWeight.w600),
               ),
+              SizedBox(height: 10),
+              Text(
+                "Have a tremendous journey with us",
+                style: TextStyle(fontSize: 16, fontWeight: FontWeight.w300),
+              ),
+
               SizedBox(height: 20),
-              Image.asset("assests/images/Rectangle 52.png"),
-              SizedBox(height: 20),
+              Inputform(hintText: "Enter Your Name"),
+              SizedBox(height: 10),
               Inputform(hintText: "Phone Number"),
               SizedBox(height: 10),
-              Inputform(hintText: "Password", ispassword: true),
+              Inputform(hintText: "Roll no"),
+              SizedBox(height: 10),
+              Inputform(hintText: "Create Password", ispassword: true),
+              SizedBox(height: 10),
+              Inputform(hintText: "Confirm Password", ispassword: true),
               SizedBox(height: 30),
               Container(
                 padding: EdgeInsets.symmetric(vertical: 10),
@@ -35,7 +45,7 @@ class Loginscreen extends StatelessWidget {
                 ),
                 child: Center(
                   child: Text(
-                    "Sign In",
+                    "Sign Up ",
                     style: TextStyle(
                       fontSize: 16,
                       fontWeight: FontWeight.bold,
@@ -51,27 +61,19 @@ class Loginscreen extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Text(
-                    "Don’t have an account,",
+                    "Already have an accounts",
                     style: TextStyle(
                       fontSize: 12,
                       fontWeight: FontWeight.normal,
                       color: AppColors.black,
                     ),
                   ),
-                  GestureDetector(
-                    onTap: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (context) => Signscreen()),
-                      );
-                    },
-                    child: Text(
-                      "Register Now",
-                      style: TextStyle(
-                        fontSize: 12,
-                        fontWeight: FontWeight.bold,
-                        color: AppColors.orange,
-                      ),
+                  Text(
+                    " Sign In",
+                    style: TextStyle(
+                      fontSize: 12,
+                      fontWeight: FontWeight.bold,
+                      color: AppColors.orange,
                     ),
                   ),
                 ],

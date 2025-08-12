@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:lms/features/auth/views/login.dart';
+import 'package:lms/features/auth/views/signup.dart';
 
 void main() {
   runApp(const MyApp());
