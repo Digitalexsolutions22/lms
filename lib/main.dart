@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:lms/dashboard.dart';
 import 'package:lms/features/auth/views/login.dart';
-import 'package:lms/features/auth/views/signup.dart';
+import 'package:lms/features/bookmange/view/bookdeatils.dart';
+import 'package:lms/features/bookmange/view/home.dart';
 
 void main() {
   runApp(const MyApp());
@@ -32,7 +34,7 @@ class MyApp extends StatelessWidget {
         // tested with just a hot reload.
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
       ),
-      home: const Loginscreen(),
+      home: const Bookdeatils(),
     );
   }
 }

@@ -92,7 +92,7 @@ class Inputform extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return TextFormField(
-      obscureText: true,
+      obscureText: ispassword == true ? true : false,
       decoration: InputDecoration(
         suffixIcon: ispassword == true ? Icon(Icons.visibility) : null,
         hintText: hintText,
