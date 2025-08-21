@@ -6,21 +6,22 @@ import 'package:lms/constants/apis.dart';
 
 class Networkhelper {
   static const baserUrl = Apis.baseurl;
-  postapi(String endpoint, Map<String, dynamic> body) async {
+  Future postapi(String endpoint, Map<String, dynamic> body) async {
     final url = baserUrl + endpoint;
 
     final finalurl = Uri.parse(url);
 
     final request = http.MultipartRequest("post", finalurl);
 
-    request.fields.addAll({
-      "name": body["name"],
-      "mobile": body["mobile"],
-      "roll_number": body["roll_number"],
-      "password": body["password"],
+    body.forEach((key, value) {
+      request.fields[key] = value.toString();
     });
 
+    log("Url :- $url");
+    log("body :- $body");
+
     final response = await request.send();
+    log(response.toString());
 
     final responseData = await http.Response.fromStream(response);
 
