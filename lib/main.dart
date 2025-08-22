@@ -1,10 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:lms/dashboard.dart';
 import 'package:lms/features/auth/controller/authprovider.dart';
-import 'package:lms/features/auth/views/login.dart';
-import 'package:lms/features/auth/views/signup.dart';
-import 'package:lms/features/bookmange/search.dart';
-import 'package:lms/features/bookmange/view/bookdeatils.dart';
+import 'package:lms/features/bookmange/controller/bookprovider.dart';
 import 'package:lms/features/bookmange/view/home.dart';
 import 'package:provider/provider.dart';
 
@@ -19,7 +15,10 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MultiProvider(
-      providers: [ChangeNotifierProvider(create: (context) => Authprovider())],
+      providers: [
+        ChangeNotifierProvider(create: (context) => Authprovider()),
+        ChangeNotifierProvider(create: (context) => Bookprovider()),
+      ],
       child: MaterialApp(
         title: 'Flutter Demo',
         theme: ThemeData(
@@ -40,7 +39,7 @@ class MyApp extends StatelessWidget {
           // tested with just a hot reload.
           colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         ),
-        home: const Loginscreen(),
+        home: const HomeScreen(),
       ),
     );
   }

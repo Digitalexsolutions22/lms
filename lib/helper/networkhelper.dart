@@ -32,4 +32,20 @@ class Networkhelper {
       log("api not working ");
     }
   }
+
+  // get api
+
+  Future  getapi(String endpoint) async {
+    final url = baserUrl + endpoint;
+    final finalurl = Uri.parse(url);
+
+     final response=  await http.get(finalurl);
+
+     if (response.statusCode == 200 || response.statusCode == 201) {
+      final responseJson = jsonDecode(response.body);
+      return responseJson;
+    } else {
+      log("api not working ");
+    }
+  }
 }

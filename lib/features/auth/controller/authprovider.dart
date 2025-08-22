@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:lms/constants/apis.dart';
@@ -47,10 +49,38 @@ class Authprovider with ChangeNotifier {
           context,
         ).showSnackBar(SnackBar(content: Text(res["message"])));
       } else {
-         ScaffoldMessenger.of(
+        ScaffoldMessenger.of(
           context,
         ).showSnackBar(SnackBar(content: Text(res["message"])));
       }
     });
   }
+
+  List<Map<String, dynamic>> subjects = [
+    {"id": 1, "subject": "Digital Electronics"},
+    {"id": 2, "subject": "Analog Communication"},
+    {"id": 3, "subject": "Signals and Systems"},
+    {"id": 4, "subject": "Microprocessors"},
+    {"id": 5, "subject": "VLSI Design"},
+  ];
+
+  List<Subjectmodel> subjects1 = [
+    Subjectmodel(id: 1, subject: "VLSI Design"),
+    Subjectmodel(id: 2, subject: "VLSI Design"),
+    Subjectmodel(id: 1, subject: "VLSI Design"),
+    Subjectmodel(id: 1, subject: "VLSI Design"),
+    Subjectmodel(id: 1, subject: "VLSI Design"),
+  ];
+
+  fun() {
+    log(subjects1[1].subject);
+    log(subjects[1]["subject"].toString());
+  }
+}
+
+class Subjectmodel {
+  final int id;
+  final String subject;
+
+  Subjectmodel({required this.id, required this.subject});
 }

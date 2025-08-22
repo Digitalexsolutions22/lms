@@ -28,9 +28,11 @@ class _HomeScreenState extends State<HomeScreen> {
         return Scaffold(
           body:
               provider.loading == true
-                  ? CircularProgressIndicator(
-                    color: AppColors.blue,
-                    strokeWidth: 5,
+                  ? Center(
+                    child: CircularProgressIndicator(
+                      color: AppColors.blue,
+                      strokeWidth: 5,
+                    ),
                   )
                   : SingleChildScrollView(
                     child: Column(
